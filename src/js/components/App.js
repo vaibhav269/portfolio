@@ -1,17 +1,19 @@
 import React,{Component} from 'react';
-
+import Nav from '../components/Nav';
 
 class App extends Component{
     render(){        
         return(
             <div>
                 <div className = "container-fluid">
-                    <div className = "row">                                           
-                       Navigation
+                    <div className = "row">
+                       
+                                <Nav />
+                       
                     </div>
                     <div className = "row">
                         <div className = "col-sm-12">
-                             Routes   
+                                
                         </div>
                     </div>
                 </div>
