@@ -1,3 +1,7 @@
 .cursorPointer{
     cursor:pointer;
 }
+
+body{
+    overflow: hidden; /* to hide scrollbar and make it feel like an app*/
+}
