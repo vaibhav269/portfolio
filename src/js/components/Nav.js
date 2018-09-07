@@ -23,7 +23,7 @@ class Nav extends Component {
                                 aria-expanded="false" 
                                 aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
-                        </button>                        
+                        </button>                                                                       
                     </nav>
  
                      <div className="collapse" id="navigation">

@@ -25,7 +25,7 @@ class App extends Component{
                                 <Nav />                       
                     </div>
 
-                    <div className = "row">                       
+                    <div className = "row justify-content-center">                       
                         <Switch>
                                 <Route exact path="/" component={About} />
                                 <Route path="/about" component={About} />
