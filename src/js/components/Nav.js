@@ -13,7 +13,7 @@ class Nav extends Component {
     render(){
         return (            
                 <div className="w-100">                
-                    <nav className="navbar navbar-dark bg-dark" style={{height:"10vh"}}>
+                    <nav className="navbar navbar-dark " style={{height:"10vh"}}>
                         <button className="navbar-toggler cursorPointer" 
                                 type="button"
                                 style={{outline:"none"}} 
@@ -27,7 +27,7 @@ class Nav extends Component {
                     </nav>
  
                      <div className="collapse" id="navigation">
-                        <div className="bg-dark p-4 d-flex flex-column justify-content-center align-items-center" 
+                        <div className="p-4 d-flex flex-column justify-content-center align-items-center" 
                             role="button" 
                             data-toggle="collapse"
                             data-target="#navigation" 
