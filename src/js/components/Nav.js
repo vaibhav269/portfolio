@@ -1,5 +1,7 @@
 import React,{Component} from 'react';
 import '../../css/Basic.css';
+import ToggleButton from '../components/ToggleButton';
+
 import {
     BrowserRouter as Router,
     Route,
@@ -23,7 +25,8 @@ class Nav extends Component {
                                 aria-expanded="false" 
                                 aria-label="Toggle navigation">
                             <span className="navbar-toggler-icon"></span>
-                        </button>                                                                       
+                        </button>   
+                        <ToggleButton />                                                                    
                     </nav>
  
                      <div className="collapse" id="navigation">
