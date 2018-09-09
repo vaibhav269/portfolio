@@ -21,7 +21,6 @@ class ConnectedToggleButton extends Component{
     }
 
     toggleTime(){
-        alert(this.props.time);
         this.props.toggleTime();
     }
 
