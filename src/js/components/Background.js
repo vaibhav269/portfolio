@@ -1,11 +1,10 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
 
-import sun from '../../asset/images/sun.png';
+import sun from '../../asset/images/sun3.png';
 import moon from '../../asset/images/moon.png';
 
-import '../../css/backgroundNight.css';
-import '../../css/backgroundDay.css';
+import '../../css/background.css';
 
 const mapStateToProps = (state)=>{
     return{
@@ -23,20 +22,14 @@ class ConnectedBackground extends Component{
         return(
             <div>
                 <div className="row position-absolute w-100 " style={{top:0,zIndex:"-50"}}>
-                    <div className="col-12 mb-4 p-0" style={{height:"100vh"}}>
-                        <div id="clouds">
-                            <div className="cloud x1"></div>
-                            <div className="cloud x2"></div>
-                            <div className="cloud x3"></div>
-                            <div className="cloud x4"></div>
-                            <div className="cloud x5"></div>
-                        </div>
+                    <div className="col-12 mb-4 p-0 day-back" >
+                        <div className="sky-gradient sky-gradient-16 w-100" style={{height:"100vh"}}></div>
                     </div>
                 </div>
 
-                <div className="row position-absolute w-100" style={{top:20}}>
+                <div className="row position-absolute w-100" style={{top:"10vh"}}>
                     <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mx-auto">
-                        <img src ={ sun } style={{maxHeight:"25vh"}} />
+                        <img className = "sun" src ={ sun } style={{maxHeight:"20vh"}} />
                     </div>
                 </div>
             </div>
@@ -46,16 +39,15 @@ class ConnectedBackground extends Component{
     night(){
         return(        
             <div>
-                <div className="row position-absolute w-100 " style={{top:0,zIndex:"-50"}}>
-                    <div className="col-12 mb-4" style={{height:"100vh"}}>
-                        <div className="stars"></div>
-                        <div className="twinkling"></div>
+                  <div className="row position-absolute w-100 " style={{top:0,zIndex:"-50"}}>
+                    <div className="col-12 mb-4 p-0 day-back" >
+                        <div className="sky-gradient sky-gradient-22 w-100" style={{height:"100vh"}}></div>
                     </div>
                 </div>
 
-                <div className="row position-absolute w-100 " style={{top:20}}>
+                <div className="row position-absolute w-100 " style={{top:"10vh"}}>
                     <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mx-auto">
-                        <img src ={ moon } style={{maxHeight:"25vh"}} />
+                        <img className = "moon" src ={ moon } style={{maxHeight:"20vh"}} />
                     </div>
                 </div>                    
             </div>
@@ -65,10 +57,10 @@ class ConnectedBackground extends Component{
     setBackground(){
         let {time} = this.props;
         if(time === true){
-            return this.night();
+            return this.day();
         }
         else{
-            return this.day();
+            return this.night();
         }
     }
 
