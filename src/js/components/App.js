@@ -7,10 +7,10 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Background from '../components/Background';
 
+
 import {CSSTransition,TransitionGroup} from 'react-transition-group';
 import '../../css/background.css';
-
-
+import {connect} from 'react-redux';
 import {
     BrowserRouter as Router,
     Route,
@@ -19,7 +19,14 @@ import {
     Redirect
   } from 'react-router-dom';
 
-class App extends Component{
+const mapStateToProps = (state)=>{
+    return{
+        time:state.time
+    }
+}
+
+
+class AppCon extends Component{
     render(){        
         return(
             <Router>
@@ -42,15 +49,18 @@ class App extends Component{
                 </div>
                 <div className = "container-fluid position-absolute" style={{top:"0",height:"100vh",zIndex:"-100"}} >
                     
-                        <CSSTransition                            
+                <TransitionGroup>               
+                    <CSSTransition
                             in={true}
                             appear={true}
-                            timeout={500}
+                            key={new Date().getTime()}                            
+                            timeout={300}
                             classNames="fade">
                             
                                 <Background />
 
                         </CSSTransition>
+                </TransitionGroup>
                     
                 </div>
             </div>
@@ -59,4 +69,5 @@ class App extends Component{
     }
 }
 
+const App = connect(mapStateToProps)(AppCon);
 export default App;
