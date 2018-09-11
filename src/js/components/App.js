@@ -7,6 +7,10 @@ import Projects from '../components/Projects';
 import Contact from '../components/Contact';
 import Background from '../components/Background';
 
+import {CSSTransition,TransitionGroup} from 'react-transition-group';
+import '../../css/background.css';
+
+
 import {
     BrowserRouter as Router,
     Route,
@@ -36,8 +40,18 @@ class App extends Component{
                         </Switch>                       
                     </div>            
                 </div>
-                <div className = "container-fluid position-absolute" style={{top:"0",height:"100vh",zIndex:"-100"}} >                                        
-                    <Background />
+                <div className = "container-fluid position-absolute" style={{top:"0",height:"100vh",zIndex:"-100"}} >
+                    
+                        <CSSTransition                            
+                            in={true}
+                            appear={true}
+                            timeout={500}
+                            classNames="fade">
+                            
+                                <Background />
+
+                        </CSSTransition>
+                    
                 </div>
             </div>
             </Router>

@@ -1,34 +1,4 @@
-/* Style */
-
-  .sky-gradient {
-    position: relative;
-    z-index: 1;
-    float: left;
-    width: 4%; height: 20%;
-    cursor: pointer;
-    transition:
-      box-shadow 150ms,
-      z-index 0ms;
-  }
-  .sky-gradient:hover {
-    z-index: 2;
-    box-shadow: 0 -5px 10px black;
-  }
-  .sky-gradient::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    width: 2500%; height: 400%;
-    background: inherit;
-    transform: translateZ(0);
-    opacity: 0;
-    transition: opacity 0s 1s;
-  }
-  .sky-gradient:hover::after {
-    opacity: 1;
-    transition: opacity 1s 0s;
-  }
-  
+ 
   /* Gradients */
   .sky-gradient-00, .sky-gradient-24 { background: #00000c; }
   .sky-gradient-01 { background: linear-gradient(to bottom, #020111 85%,#191621 100%); }
@@ -54,3 +24,35 @@
   .sky-gradient-21 { background: linear-gradient(to bottom, #010A10 30%,#59230B 80%,#2F1107 100%); }
   .sky-gradient-22 { background: linear-gradient(to bottom, #090401 50%,#4B1D06 100%); }
   .sky-gradient-23 { background: linear-gradient(to bottom, #00000c 80%,#150800 100%); }
+
+  /*Sun moon animations*/
+
+  /*appear*/
+  .fade-appear {
+    opacity: 0;
+ }
+ .fade-appear.fade-appear-active {
+    opacity: 1;
+    transition: opacity 500ms ease-in;
+ }
+
+ /*enter*/
+ .fade-enter {
+  opacity: 0;
+}
+.fade-enter.fade-enter-active {
+  opacity: 1;
+  transition: opacity 5000ms ease-in 5000ms;
+}
+
+/*exit*/
+.fade-exit {
+  opacity: 0;
+}
+.fade-exit.fade-exit-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.fade-exit-done{
+ opacity: 1; 
+}
