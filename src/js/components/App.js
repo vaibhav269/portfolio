@@ -55,7 +55,7 @@ class AppCon extends Component{
                             in={true}
                             appear={true}
                             key={new Date().getTime()}                            
-                            timeout={300}
+                            timeout={500}
                             classNames="fade">
                             
                                 <Background />

@@ -1,4 +1,4 @@
- 
+
   /* Gradients */
   .sky-gradient-00, .sky-gradient-24 { background: #00000c; }
   .sky-gradient-01 { background: linear-gradient(to bottom, #020111 85%,#191621 100%); }
@@ -29,21 +29,21 @@
 
   /*appear*/
   .fade-appear {
-    opacity: 0.5;
+    opacity: 0;
  }
  .fade-appear.fade-appear-active {
     opacity: 1;
-    transition: opacity 1000ms linear;
+    transition: opacity 500ms linear;
  }
 
  /*enter*/
  .fade-enter {
-  opacity: 0.5;
+  opacity: 0;
   z-index: 1;
 }
 .fade-enter.fade-enter-active {
   opacity: 1;
-  transition: opacity 300ms linear;
+  transition: opacity 500ms linear;
 }
 
 
@@ -52,25 +52,40 @@
   opacity: 1;
 }
 .fade-exit.fade-exit-active {
-  opacity: 0.5;
-  transition: opacity 300ms linear;
+  opacity: 0;
+  transition: opacity 500ms linear;
 }
 .fade-exit-done{
  opacity: 0; 
 }
 
+
 /*sun moon animations*/
-.sun{
-  animation: sunAnime 0.2s linear alternate forwards;
-  transform: scale(0.8);
+.sunMoon-appear{
+  transform: scale(1);
+}
+.sunMoon-appear.sunMoon-appear-active{
+  transform: scale(1.3);  
+  transition:transform 500ms linear 500ms;
 }
 
-.moon{
-  animation: sunAnime 0.2s linear alternate forwards;
-  transform: scale(0.8);
+.sunMoon-enter{
+  transform: scale(1);
 }
-
-@keyframes sunAnime {
-  from   {transform:scale(0.8) }
-  to {transform:scale(1) }
+.sunMoon-enter-active{
+  transform: scale(1.3);
+  transition:transform 500ms linear 500ms;
+}
+.sunMoon-enter-done{
+  transform:scale(1.3);
+}
+.sunMoon-exit{
+  transform:scale(1.3);
+}
+.sunMoon-exit.sunMoon-exit-active{
+  transform: scale(1);
+  transition:transform 500ms linear 500ms;
+}
+.sunMoon-exit-done{
+  transform:scale(0);
 }
