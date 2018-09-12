@@ -36,7 +36,7 @@ class ConnectedBackground extends Component{
                             in={true}
                             timeout={1000}
                         >
-                            <img src ={ sun } className="sun" style={{maxHeight:"20vh"}} key = {"hello"} />                                                     
+                            <img src ={ sun } className="sun  d-none d-lg-inline-block" style={{maxHeight:"20vh"}} key = {"hello"} />                                                     
                         </CSSTransition>
                     </div>
                 </div>
@@ -61,7 +61,7 @@ class ConnectedBackground extends Component{
                             classNames="sunMoon"
                             timeout={1000}
                             >
-                            <img src ={ moon } className="moon" style={{maxHeight:"20vh"}} key={2} />                            
+                            <img src ={ moon } className="moon d-none d-lg-inline-block" style={{maxHeight:"20vh"}} key={2} />                            
                         </CSSTransition>    
                     </div>
                 </div>                    

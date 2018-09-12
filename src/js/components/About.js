@@ -10,14 +10,14 @@ class About extends Component {
                     
                     <div className="row align-items-center d-flex">
 
-                        <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4">
-                            <img src ={ dp } id="img" style={{maxHeight:"60vh",transition:"1s"}} />
+                        <div className="col-12 col-lg-5 d-flex align-items-center justify-content-center mb-4 p-0">
+                            <img src ={ dp } id="img" style={{maxHeight:"60vh",transition:"1s",maxWidth:"100%"}} />
                         </div>
 
-                        <div className="col-12 col-lg-8 d-flex justify-content-center align-items-center">
+                        <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center">
                             
                             <blockquote className = "font-weight-bold text-justify" 
-                                style={{fontFamily:"Comic Sans MS, cursive, sans-serif",fontSize:"120%",maxHeight:"40vh",color:"#AAA"}}>
+                                style={{fontFamily:"Comic Sans MS, cursive, sans-serif",fontSize:"120%",maxHeight:"40vh",color:"#ddd"}}>
                                     Hey guys! I am Vaibhav,full stack web developer from Roorkee who loves React and Node.
                                     My hobbies include developing webapps,playing vollyball, watching movies,giving public speeches and hanging out with friends.
                                     <footer className="blockquote-footer text-right">Holy shit</footer>
