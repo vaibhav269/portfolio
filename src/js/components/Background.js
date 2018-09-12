@@ -4,7 +4,8 @@ import {connect} from 'react-redux';
 import sun from '../../asset/images/sun3.png';
 import moon from '../../asset/images/moon.png';
 
-
+import {CSSTransition,TransitionGroup} from 'react-transition-group';
+import '../../css/background.css';
 
 const mapStateToProps = (state)=>{
     return{
@@ -29,9 +30,9 @@ class ConnectedBackground extends Component{
 
                 <div className="row position-absolute w-100" style={{top:"10vh"}}>
                     <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mx-auto">
-                        
-                        
+
                                 <img className = "sun" src ={ sun } style={{maxHeight:"20vh"}} key = {"hello"} />
+
                         
                     </div>
                 </div>
@@ -50,7 +51,7 @@ class ConnectedBackground extends Component{
 
                 <div className="row position-absolute w-100 " style={{top:"10vh"}}>
                     <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mx-auto">
-                        
+
                                 <img className = "moon" src ={ moon } style={{maxHeight:"20vh"}} key={2} />
                         
                     </div>

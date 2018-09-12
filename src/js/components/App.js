@@ -19,6 +19,7 @@ import {
     Redirect
   } from 'react-router-dom';
 
+  //to use transition group the component must know stated
 const mapStateToProps = (state)=>{
     return{
         time:state.time
