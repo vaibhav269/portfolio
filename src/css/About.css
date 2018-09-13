@@ -1,0 +1,11 @@
+#dp{
+    max-height:60vh;
+    transition:1s;
+    max-width: 100%;
+}
+
+@media only screen and (max-width: 1040px) {
+    #dp{
+        max-height:40vh;        
+    }
+}

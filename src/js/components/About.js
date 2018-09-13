@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
 import dp from '../../asset/images/vaibhavPic.jpg';
-import '../../css/background.css';
+import '../../css/About.css';
 
 class About extends Component {
     render(){
@@ -11,7 +11,7 @@ class About extends Component {
                     <div className="row align-items-center d-flex">
 
                         <div className="col-12 col-lg-5 d-flex align-items-center justify-content-center mb-4 p-0">
-                            <img src ={ dp } id="img" style={{maxHeight:"60vh",transition:"1s",maxWidth:"100%"}} />
+                            <img src ={ dp } id="dp"  />
                         </div>
 
                         <div className="col-12 col-lg-7 d-flex justify-content-center align-items-center">
