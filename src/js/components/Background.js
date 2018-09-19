@@ -32,7 +32,7 @@ class ConnectedBackground extends Component{
 
                  <div className="row abc position-absolute w-100 " style={{top:0,zIndex:"1"}}>
                     <div className="col-12 mb-4 p-0" style={{height:"100vh",width:"100vw"}}>
-                        <Stars />
+                        <Stars key="1"/>
                     </div>
                 </div>
 
@@ -63,7 +63,7 @@ class ConnectedBackground extends Component{
 
                 <div className="row abc position-absolute w-100 " style={{top:0,zIndex:"1"}}>
                     <div className="col-12 mb-4 p-0" style={{height:"100vh",width:"100vw"}}>
-                        <Stars />
+                        <Stars/>
                     </div>
                 </div>
 

@@ -4,25 +4,54 @@ import '../../css/star.css';
 class Stars extends Component{
     constructor(){
         super();
+        
+        this.starNo;
+        this.movementController;
+        this.height = window.innerHeight;
+        this.width = window.innerWidth;
+
         this.state = {            
             stars:null
         }
+        this.changeStarPosition = this.changeStarPosition.bind(this);
+    }
+
+    changeStarPosition(){
+        let starArray = [];
+        let width = this.width;
+        let height = this.height;
+        let starNo = this.starNo;
+        for(let i = 0 ; i < starNo ; i++ ){
+            let tempStar = {};
+            tempStar['left'] = Math.floor(Math.random()*width+1);
+            tempStar['top'] = Math.floor(Math.random()*height+1);
+            tempStar['key'] = i;
+            starArray.push(tempStar);                
+        }
+        this.setState({stars:starArray});
+        console.log(this.state.stars);
     }
     
     componentWillMount(){
-        let starNo = Math.floor(Math.random()*50 + 100);
+        this.starNo = Math.floor(Math.random()*50 + 10);
         let starArray = [];
-        let height = window.innerHeight;
-        let width = window.innerWidth;                
+        this.height = window.innerHeight;
+        this.width = window.innerWidth;
 
-        for(let i = 0 ; i < starNo ; i++ ){
+        for(let i = 0 ; i < this.starNo ; i++ ){
             let tempStar = {};
-            tempStar['width'] = Math.floor(Math.random()*width+1);
-            tempStar['height'] = Math.floor(Math.random()*height+1);
+            tempStar['left'] = Math.floor(Math.random()*this.width+1);
+            tempStar['top'] = Math.floor(Math.random()*this.height+1);
             tempStar['key'] = i;
             starArray.push(tempStar);
         }
         this.setState({stars:starArray});        
+        this.movementController = setInterval(this.changeStarPosition,25000);
+    }
+
+    componentDidMount(){
+        //can't update state directly in componentDidMount so using timeout for initial triggering of stars movement
+        setTimeout(this.changeStarPosition,10); 
     }
 
     render(){        
@@ -31,11 +60,11 @@ class Stars extends Component{
                 {
                     this.state.stars.map(function(star){
                         return(
-                            <div className = "star" style = {{top:star.height,left:star.width}} key={star.key} > </div>
+                            <div className = "star" style = {{top:star.top,left:star.left}} key={star.key} > </div>
                         )
                     })
-                }                         
-            </div>                    
+                }
+            </div>
         )
     }
 }
