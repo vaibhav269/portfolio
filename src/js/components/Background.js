@@ -1,10 +1,12 @@
 import React,{Component} from 'react';
 import {connect} from 'react-redux';
+import {CSSTransition,TransitionGroup} from 'react-transition-group';
 
 import sun from '../../asset/images/sun3.png';
 import moon from '../../asset/images/moon2.png';
 
-import {CSSTransition,TransitionGroup} from 'react-transition-group';
+import Stars from '../components/Stars';
+
 import '../../css/background.css';
 
 const mapStateToProps = (state)=>{
@@ -28,6 +30,12 @@ class ConnectedBackground extends Component{
                     </div>
                 </div>
 
+                 <div className="row abc position-absolute w-100 " style={{top:0,zIndex:"1"}}>
+                    <div className="col-12 mb-4 p-0" style={{height:"100vh",width:"100vw"}}>
+                        <Stars />
+                    </div>
+                </div>
+
                 <div className="row position-absolute w-100" style={{top:"10vh"}}>
                     <div className="col-12 col-lg-4 d-flex align-items-center justify-content-center mb-4 mx-auto">
                         <CSSTransition
@@ -48,8 +56,14 @@ class ConnectedBackground extends Component{
         return(        
             <div >
                   <div className="row position-absolute w-100 " style={{top:0,zIndex:"-50"}}>
-                    <div className="col-12 mb-4 p-0 day-back" >
-                        <div className="sky-gradient-22 w-100" style={{height:"100vh"}}></div>
+                    <div className="col-12 mb-4 p-0 " >
+                        <div className="sky-gradient-22 w-100" style={{height:"100vh"}}></div>                        
+                    </div>
+                </div>
+
+                <div className="row abc position-absolute w-100 " style={{top:0,zIndex:"1"}}>
+                    <div className="col-12 mb-4 p-0" style={{height:"100vh",width:"100vw"}}>
+                        <Stars />
                     </div>
                 </div>
 
@@ -61,7 +75,7 @@ class ConnectedBackground extends Component{
                             classNames="sunMoon"
                             timeout={1000}
                             >
-                            <img src ={ moon } className="moon d-none d-lg-inline-block" style={{maxHeight:"20vh"}} key={2} />                            
+                            <img src ={ moon } className="moon d-none d-lg-inline-block" style={{maxHeight:"20vh"}} key={2} />
                         </CSSTransition>    
                     </div>
                 </div>                    
