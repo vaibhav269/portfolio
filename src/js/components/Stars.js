@@ -1,3 +1,5 @@
+/*This component adds a number of moving and glowing star looking white dots to the viewport */
+
 import React,{Component} from 'react';
 import '../../css/star.css';
 
@@ -17,6 +19,7 @@ class Stars extends Component{
     }
 
     changeStarPosition(){
+        /* this function changes the position of stars by changing the state 'stars' */
         let starArray = [];
         let width = this.width;
         let height = this.height;
@@ -33,6 +36,7 @@ class Stars extends Component{
     }
     
     componentWillMount(){
+        /* Here we are creating and deciding the number of stars and their max and min position*/
         this.starNo = Math.floor(Math.random()*50 + 10);
         let starArray = [];
         this.height = window.innerHeight;
@@ -46,12 +50,16 @@ class Stars extends Component{
             starArray.push(tempStar);
         }
         this.setState({stars:starArray});        
+        //to clear the listener of unmounting of component
         this.movementController = setInterval(this.changeStarPosition,25000);
     }
 
     componentDidMount(){
         //can't update state directly in componentDidMount so using timeout for initial triggering of stars movement
         setTimeout(this.changeStarPosition,10); 
+    }
+    componentWillUnmount(){
+        clearInterval(this.movementController);
     }
 
     render(){        
